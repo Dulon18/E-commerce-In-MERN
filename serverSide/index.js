@@ -22,7 +22,7 @@ const productSliderController = require('../controllers/productSliderController'
 // Product Routes
 router.get('/ProductBrandList',brandController.productBrandList)
 router.get('/ProductCategoryList',categoryController.categoryList)
-router.get('/ProductSliderList',productSliderController.productSlider)
+router.get('/ProductSliderList',productSliderController.productSliderList)
 router.get('/ProductListByBrand/:BrandID', brandController.productListByBrand);
 router.get('/ProductListByCategory/:CategoryID', productController.productListByCategory);
 router.get('/ProductListByKeyword/:Keyword', brandController.productListByKeyword);
@@ -41,6 +41,8 @@ router.post('/CreateProfile', profileController.profileCreate);
 router.post('/UpdateProfile', profileController.updateProfile);
 router.get('/ReadProfile', profileController.readProfile);
 
+//wish List
+
 router.post('/SaveWishList',wishController.saveWishList)
 router.post('/RemoveWishList',wishController.removeWishList)
 router.get('/WishList',wishController.wishList)
@@ -49,6 +51,8 @@ router.get('/WishList',wishController.wishList)
 router.get('/CartList', cartController.cartsList);
 router.post('/SaveCartList', cartController.saveCart);
 router.post('/RemoveCartList', cartController.removeCart);
+
+
 module.exports = router;
 
 app.listen(3030, () =>

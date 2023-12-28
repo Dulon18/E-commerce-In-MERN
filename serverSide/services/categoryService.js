@@ -1,15 +1,17 @@
 
 const CategoryModel = require('../models/CategoryModel');
 
-const categoryList= async (req, res) => {
+const getCategories= async (req, res) => {
   try {
-    const categoryLists = await CategoryModel.find();
-    res.json(categoryLists);
+    const carts = await CategoryModel.find();
+    res.json(carts);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 
+
+
 module.exports = {
-  categoryList,
+  getCarts,
 };

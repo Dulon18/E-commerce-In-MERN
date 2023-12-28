@@ -1,7 +1,23 @@
 
 const CartModel = require('../models/CartModel');
 
-const getCarts = async (req, res) => {
+const cartsList = async (req, res) => {
+  try {
+    const carts = await CartModel.find();
+    res.json(carts);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+const saveCart = async (req, res) => {
+  try {
+    const carts = await CartModel.find();
+    res.json(carts);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+const removeCart = async (req, res) => {
   try {
     const carts = await CartModel.find();
     res.json(carts);
@@ -10,8 +26,6 @@ const getCarts = async (req, res) => {
   }
 };
 
-
-
 module.exports = {
-  getCarts,
+  cartsList,saveCart,removeCart
 };
