@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-const notFoundPage = () => {
+const error404Page = () => {
      return (
           <div>
-
+               
           </div>
      );
 };
 
-export default notFoundPage;
+export default error404Page;
