@@ -4,7 +4,7 @@ import Layouts from '../Layout/layouts';
 const homePage = () => {
      return (
           <div className=' bg-zinc-800'>
-               <div className='container mx-auto'>
+               <div className=''>
                     <Layouts>
                          <div className="carousel w-full">
                               <div id="slide1" className="carousel-item relative w-full">
