@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const salesRoutes = require('./routes/salesRoutes');
 
 const router = express.Router();
 
@@ -51,9 +52,16 @@ router.get('/WishList',wishController.wishList)
 router.get('/CartList', cartController.cartsList);
 router.post('/SaveCartList', cartController.saveCart);
 router.post('/RemoveCartList', cartController.removeCart);
-
-
 module.exports = router;
+
+
+mongoose.connect('mongodb://localhost/salesdb', { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+
+app.use(express.json());
+
+
+app.use('/api/sales', salesRoutes);
 
 app.listen(3030, () =>
      {
