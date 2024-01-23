@@ -1,2 +1,2 @@
-## React + Vite used for UI
+## React + Vite Used for UI
 
